@@ -1,0 +1,6 @@
+node_modules/
+dist/
+appscript/
+.parcel-cache/
+.clasp.json
+.parcel-cache

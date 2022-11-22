@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- BOOTSTRAP-->
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <!-- TABULATOR -->
+    <link
+      href="https://unpkg.com/tabulator-tables/dist/css/tabulator_simple.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CUSTOM STYLES -->
+    <style>
+      @import "./css/style.css";
+    </style>
+  </head>
+  <body>
+    <article class="container">
+      <form id="contract-form">
+        <section id="contract-main" class="form-group">
+          <ul class="form-fields">
+            <li class="mb-3">
+              <label for="date" class="form-label"> Date: </label>
+              <input type="date" class="form-control" name="date" />
+            </li>
+            <li class="mb-3">
+              <label for="title" class="form-label"> Title: </label>
+              <input type="text" class="form-control" name="title" />
+            </li>
+            <li class="mb-3">
+              <label for="amount" class="form-label"> Amount: </label>
+              <input
+                type="number"
+                class="form-control"
+                name="amount"
+                min="1"
+                step="any"
+              />
+            </li>
+            <li class="mb-3">
+              <label for="client_id" class="form-label">Client:</label>
+              <select name="client_id" class="form-select" id="client-id">
+                <option>Loading...</option>
+              </select>
+            </li>
+          </ul>
+        </section>
+        <section id="contract-items" class="custom-hidden">
+          <ul class="row g-3 form-fields">
+            <li class="mb-3">
+              <label for="item_title" class="form-label"> Item #1: </label>
+              <input
+                type="text"
+                class="form-control-sm"
+                name="item_title"
+                required
+              />
+            </li>
+            <li class="mb-3">
+              <label for="title" class="form-label"> Amount: </label>
+              <input type="number" class="form-control-sm" name="item_amount" />
+            </li>
+            <li class="mb-3">
+              <label for="project_id" class="form-label">Project: </label>
+              <select name="project_id" class="form-select form-select-sm">
+                <option>Loading...</option>
+              </select>
+            </li>
+          </ul>
+        </section>
+        <section id="contract-file" class="form-group custom-hidden">
+          <ul class="form-fields">
+            <li class="mb-3">
+              <label for="file_id"> Contract File </label>
+              <input type="file" name="file_id" />
+            </li>
+          </ul>
+        </section>
+        <section>
+          <ul class="form-buttons">
+            <input
+              type="button"
+              class="custom-hidden"
+              id="prev-btn"
+              value="Previous"
+            />
+
+            <input type="button" id="next-btn" value="Next" />
+            <input
+              type="Submit"
+              class="custom-hidden"
+              id="sub-btn"
+              value="Add Contract"
+            />
+          </ul>
+        </section>
+      </form>
+    </article>
+
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!--BOOTSTRAP-->
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- TABULATOR DEPENDENCY - LUXON.JS DATE LIB  -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.3/build/global/luxon.min.js"></script>
+    <!--   TABULATOR JS  -->
+    <script src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
+
+    <!-- Google Picker Load  -->
+    <script src="https://apis.google.com/js/api.js"></script>
+
+    <!--   CUSTOM JAVASCRIPT  -->
+    <script type="module">
+      import "./js/contract.js";
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "fundemic-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "source": "index.html",
+  "scripts": {
+    "build": "npx parcel build client/*.html --no-source-maps --no-cache --no-optimize --dist-dir appscript/client && cp -R server appscript/server && clasp push",
+    "deploy": "npx parcel build client/*.html --no-source-maps --dist-dir appscript/client && cp -R server appscript/server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.7.0",
+    "prettier": "2.7.1"
+  },
+  "dependencies": {
+    "@types/google-apps-script": "^1.0.55"
+  }
+}

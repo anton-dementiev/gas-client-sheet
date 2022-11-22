@@ -1,0 +1,34 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+:before,
+:after {
+  box-sizing: inherit;
+}
+
+:root {
+  --primary-font: Montserrat, Arial, sans-serif;
+}
+
+body {
+  font-family: var(--primary-font);
+}
+
+ul.form-fields,
+ul.form-buttons {
+  list-style-type: none;
+}
+
+.form-buttons > * {
+  display: inline-block;
+}
+
+.custom-hidden {
+  display: none;
+}
+
+.custom-visible {
+  display: block;
+}
